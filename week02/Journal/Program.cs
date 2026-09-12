@@ -1,5 +1,7 @@
 using System;
 
+// I just add the option of the mood, because its easy to see how we felt the day.
+
 class Program
 {
     static void Main(string[] args)
