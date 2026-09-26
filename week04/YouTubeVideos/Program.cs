@@ -23,7 +23,7 @@ class Program
         videos.Add(video2);
 
         //Video 3
-        Video video3 = new Video("Principle og encapsulation.", "Tech Academy", 600);
+        Video video3 = new Video("Principle of encapsulation.", "Tech Academy", 600);
         video3.AddComment(new Comment("Catalina", "Thank you! I understood better with your video"));
         video3.AddComment(new Comment("Jesus", "It was very easy to understand."));
         video3.AddComment(new Comment("Javier", "I though it was hard to understand. tank you for sharing!"));
