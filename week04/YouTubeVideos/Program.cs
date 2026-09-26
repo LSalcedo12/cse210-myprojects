@@ -9,21 +9,21 @@ class Program
         List<Video> videos = new List<Video>();
 
         //Video 1
-        Video video1 = new Video("Learn Math problems tips in 5 minutes.");
+        Video video1 = new Video("Learn Math problems tips in 5 minutes.", "Math Channel", 300);
         video1.AddComment(new Comment("John", "Very good explanation!"));
         video1.AddComment(new Comment("Diana", "Excellent tips, I used them in my test today."));
         video1.AddComment(new Comment("Mary", "Give us more tips"));
         videos.Add(video1);
 
         //Video 2
-        Video video2 = new Video("Learn about Abstraction.");
+        Video video2 = new Video("Learn about Abstraction.", "Code Hub", 450);
         video2.AddComment(new Comment("Karen", "I loved the examples!"));
         video2.AddComment(new Comment("Fer", "Thank you its so helpfull for me."));
         video2.AddComment(new Comment("Adrian", "Can you give us more examples?"));
         videos.Add(video2);
 
         //Video 3
-        Video video3 = new Video("Principle og encapsulation.");
+        Video video3 = new Video("Principle og encapsulation.", "Tech Academy", 600);
         video3.AddComment(new Comment("Catalina", "Thank you! I understood better with your video"));
         video3.AddComment(new Comment("Jesus", "It was very easy to understand."));
         video3.AddComment(new Comment("Javier", "I though it was hard to understand. tank you for sharing!"));
@@ -41,7 +41,7 @@ class Program
 
             foreach (Comment comment in video.Comments)
             {
-                Console.WriteLine($" - {comment.Name}: \ "{comment.Text}\"");
+                Console.WriteLine($" - {comment.Name}: \"{comment.Text}\"");
             }
            
             Console.WriteLine("==================");
