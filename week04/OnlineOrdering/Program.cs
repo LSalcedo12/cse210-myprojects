@@ -22,9 +22,9 @@ class Program
         Customer customer2 = new Customer("Maria Garcia", address2);
         Order order2 = new Order(customer2);
 
-        order1.AddProduct(new Product("Mechanical Keyboard", "P2001", 75.00, 1));
-        order1.AddProduct(new Product("Monitor 24 Inches", "P2002", 150.00, 2));
-        order1.AddProduct(new Product("HDMI cable", "P2003", 10.00, 3));
+        order2.AddProduct(new Product("Mechanical Keyboard", "P2001", 75.00, 1));
+        order2.AddProduct(new Product("Monitor 24 Inches", "P2002", 150.00, 2));
+        order2.AddProduct(new Product("HDMI cable", "P2003", 10.00, 3));
 
         Console.WriteLine(order2.GetPackingLabel());
         Console.WriteLine(order2.GetShippingLabel());
