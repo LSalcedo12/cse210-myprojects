@@ -25,13 +25,14 @@ class Program
             }
             else if (choice == "2")
             {
-            Console.WriteLine("Reflecting activity (Coming soon)");
-            Thread.Sleep(2000);
+                ReflectingActivity reflecting = new ReflectingActivity();
+                reflecting.Run();
             }
             else if (choice == "3")
             {
-                Console.WriteLine("Listing activity (Coming soon)");
-                Thread.Sleep(2000);
+                Listing activity listing = new ListingActivity();
+                listing.Run();
+           
             }
         }
     }
