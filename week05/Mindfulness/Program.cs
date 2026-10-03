@@ -30,7 +30,7 @@ class Program
             }
             else if (choice == "3")
             {
-                Listing activity listing = new ListingActivity();
+                ListingActivity listing = new ListingActivity();
                 listing.Run();
            
             }
