@@ -106,7 +106,41 @@ public class GoalManager
             {
                 case "1":
                     // CreateGoal();
-                     break;
+                     Console.WriteLine("The types of Goals are:");
+                Console.WriteLine("  1. Simple Goal");
+                Console.WriteLine("  2. Eternal Goal");
+                Console.WriteLine("  3. Checklist Goal");
+                Console.Write("Which type of goal would you like to create? ");
+                string goalType = Console.ReadLine();
+
+                Console.Write("What is the name of your goal? ");
+                string name = Console.ReadLine();
+                Console.Write("What is a short description of it? ");
+                string description = Console.ReadLine();
+                Console.Write("What is the amount of points associated with this goal? ");
+                string points = Console.ReadLine();
+
+                if (goalType == "1")
+                {
+                    SimpleGoal goal = new SimpleGoal(name, description, points);
+                    _goals.Add(goal);
+                }
+                else if (goalType == "2")
+                {
+                    EternalGoal goal = new EternalGoal(name, description, points);
+                    _goals.Add(goal);
+                }
+                else if (goalType == "3")
+                {
+                    Console.Write("What is the target amount of times for this goal? ");
+                    int target = int.Parse(Console.ReadLine());
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    int bonus = int.Parse(Console.ReadLine());
+
+                    ChecklistGoal goal = new ChecklistGoal(name, description, points, target, bonus);
+                    _goals.Add(goal);
+                }
+                break;
                 case "2":
                     ListGoalDetails();
                     break;
