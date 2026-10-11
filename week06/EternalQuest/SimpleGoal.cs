@@ -12,6 +12,11 @@ public class SimpleGoal : Goal
         _IsComplete = true;
     }
 
+    public override bool IsComplete()
+    {
+        return _IsComplete;
+    }
+
     public override string GetDetailsString()
     {
         string checkbox = _IsComplete ? "[x]" : "[ ]";
