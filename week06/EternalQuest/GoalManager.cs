@@ -152,22 +152,29 @@ public class GoalManager
                     break;
                 case "5":
                     // RecordEvent();
-                    ListGoalDetails(); // Muestra las metas para que el usuario sepa cuál elegir
+                    ListGoalDetails(); 
                     Console.Write("Which goal did you accomplish? ");
-                    int index = int.Parse(Console.ReadLine()) - 1; // Restamos 1 porque las listas empiezan en 0
+                    string input = Console.ReadLine();
                     
-                    // Verificamos que el índice sea válido y registramos el evento
-                    if (index >= 0 && index < _goals.Count)
+                    
+                    if (int.TryParse(input, out int goalNumber))
                     {
-                        // Llamamos al método RecordEvent de la meta seleccionada
-                        // (Asegúrate de sumar los puntos que otorga esa meta a tu _score total)
-                        _score += _goals[index].GetPoints(); // (O la lógica que tengas para sumar puntos)
-                        _goals[index].RecordEvent();
-                        Console.WriteLine($"Congratulations! You have earned points!");
+                        int index = goalNumber -1;
+
+                        if (index >= 0 && index < _goals.Count)
+                        {
+                            _goals[index]. RecordEvent();
+                            _score += (_goals[index].GetPoints());
+                            Console.WriteLine($"Congratulations! You have earned points!");
+                        }
+                        else
+                       {
+                            Console.WriteLine("Invalid goal selection.");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Invalid goal selection.");
+                        Console.WriteLine("Please enter a valid number.");
                     }
                     break;
                 case "6":
