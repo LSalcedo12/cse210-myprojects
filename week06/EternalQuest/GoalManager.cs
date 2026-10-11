@@ -48,6 +48,8 @@ public class GoalManager
 
                 if (goalType == "SimpleGoal")
                 {
+                    if (details.Length >= 4)
+                {
                     string name = details[0].Trim();
                     string description = details[1].Trim();
                     string points = details[2].Trim();
@@ -60,6 +62,7 @@ public class GoalManager
                     }
                     _goals.Add(goal);
                 }
+            }
                 else if (goalType == "ChecklistGoal")
                 {
                     string name = details[0];
