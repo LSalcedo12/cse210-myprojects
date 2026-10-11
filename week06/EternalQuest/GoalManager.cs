@@ -75,8 +75,18 @@ public class GoalManager
                     }
                     _goals.Add(goal);
                 }
+                else if (goalType == "EternalGoal")
+                {
+                    string name = details[0].Trim();
+                    string description = details[1].Trim();
+                    string points = details[2].Trim();
+
+                    EternalGoal goal = new EternalGoal(name, description, points);
+                    _goals.Add(goal);
+                }
             }
             Console.WriteLine("Goals loaded succesfully!");
+
         }
         else
         {
