@@ -40,8 +40,10 @@ public class GoalManager
             for (int i = 1; i < lines.Length; i++)
             {
                 string line = lines[i];
+                if (string.IsNullOrWhiteSpace(line)) continue;
                 string[] parts = line.Split(':');
-                string goalType = parts[0];
+                if (parts.Length < 2) continue;
+                string goalType = parts[0].Trim();
                 string[] details = parts[1].Split(',');
 
                 if (goalType == "SimpleGoal")
