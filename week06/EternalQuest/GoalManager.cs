@@ -19,7 +19,7 @@ public class GoalManager
 
             foreach (Goal goal in _goals)
             {
-                outputFile.WriteLine(goal.GetStringRepresentation());
+                outputFile.WriteLine($"{goal.GetType().Name}:{goal.GetStringRepresentation()}");
             }
         }
         Console.WriteLine("Goals saved succesfully!");
@@ -32,7 +32,7 @@ public class GoalManager
 
         if (File.Exists(filename))
         {
-            string [] lines = File.ReadAllLines(filename);
+            string [] lines = System.IO.File.ReadAllLines(filename);
 
             _score = int.Parse(lines[0]);
             _goals.Clear();
@@ -44,12 +44,12 @@ public class GoalManager
                 string goalType = parts[0];
                 string[] details = parts[1].Split(',');
 
-                if (goalType == "simpleGoal")
+                if (goalType == "SimpleGoal")
                 {
-                    string name = details[0];
-                    string description = details[1];
-                    string points = details[2];
-                    bool isComplete = bool.Parse(details[3]);
+                    string name = details[0].Trim();
+                    string description = details[1].Trim();
+                    string points = details[2].Trim();
+                    bool isComplete = bool.Parse(details[3].Trim());
 
                     SimpleGoal goal = new SimpleGoal(name, description, points);
                     if (isComplete)
