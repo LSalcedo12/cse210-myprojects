@@ -41,6 +41,8 @@ public class GoalManager
             {
                 string line = lines[i];
                 if (string.IsNullOrWhiteSpace(line)) continue;
+                Console.WriteLine($"Line readed: {line}");
+
                 string[] parts = line.Split(':');
                 if (parts.Length < 2) continue;
                 string goalType = parts[0].Trim();
