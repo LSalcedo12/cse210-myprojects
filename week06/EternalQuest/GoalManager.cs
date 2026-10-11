@@ -66,13 +66,14 @@ public class GoalManager
                 }
             }
                 else if (goalType == "ChecklistGoal")
+                if (details.Length >= 6)
                 {
-                    string name = details[0];
-                    string description = details[1];
-                    string points = details[2];
-                    int bonus = int.Parse(details[3]);
-                    int target = int.Parse(details[4]);
-                    int amountCompleted = int.Parse(details[5]);
+                    string name = details[0].Trim();
+                    string description = details[1].Trim();
+                    string points = details[2].Trim();
+                    int bonus = int.Parse(details[3].Trim());
+                    int target = int.Parse(details[4].Trim());
+                    int amountCompleted = int.Parse(details[5].Trim());
 
                     ChecklistGoal goal = new ChecklistGoal(name, description, points, target, bonus);
 
